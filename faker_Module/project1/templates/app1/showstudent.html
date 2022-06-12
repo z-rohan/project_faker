@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">STUDENT ID</th>
+        <th scope="col">NAME</th>
+        <th scope="col">ADDRESS</th>
+        <th scope="col">EMAIL</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in obj %}
+      <tr>
+        <th>{{i.sid}}</th>
+        <td>{{i.name}}</td>
+        <td>{{i.address}}</td>
+        <td>{{i.email}}</td>
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+<a href="{% url 'fakedata_url' %}"><button class="btn btn-success">Genrate Fake Data</button></a>
+{% endblock %}
